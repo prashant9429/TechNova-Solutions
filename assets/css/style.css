@@ -1,0 +1,18 @@
+/* TechNova Solutions Main Styles */
+
+:root {
+ --primary:#0F172A;
+ --secondary:#1E293B;
+ --accent:#3B82F6;
+ --highlight:#06B6D4;
+}
+
+body {
+ font-family: 'Roboto', sans-serif;
+ background:#ffffff;
+ color:#1e293b;
+}
+
+.navbar-brand {
+ font-weight:700;
+}
