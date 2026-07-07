@@ -1,0 +1,7 @@
+/* Responsive Design Rules */
+
+@media(max-width:768px){
+ .navbar-brand{
+  font-size:18px;
+ }
+}
