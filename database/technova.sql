@@ -1,0 +1,79 @@
+-- TechNova Solutions Database Architecture
+-- Module 1.2
+
+CREATE DATABASE IF NOT EXISTS technova_db;
+USE technova_db;
+
+CREATE TABLE admins (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(100),
+ email VARCHAR(150) UNIQUE,
+ password VARCHAR(255),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE users (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(100),
+ email VARCHAR(150),
+ phone VARCHAR(20),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE services (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ service_name VARCHAR(150),
+ description TEXT,
+ image VARCHAR(255),
+ status ENUM('active','inactive') DEFAULT 'active',
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE projects (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ title VARCHAR(150),
+ category VARCHAR(100),
+ description TEXT,
+ image VARCHAR(255),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE employees (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(100),
+ designation VARCHAR(100),
+ email VARCHAR(150),
+ image VARCHAR(255),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE contacts (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(100),
+ email VARCHAR(150),
+ phone VARCHAR(20),
+ message TEXT,
+ status VARCHAR(50) DEFAULT 'new',
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE blogs (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ title VARCHAR(200),
+ content LONGTEXT,
+ image VARCHAR(255),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE settings (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ setting_key VARCHAR(100),
+ setting_value TEXT
+);
+
+CREATE TABLE activity_logs (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ user_id INT,
+ action VARCHAR(255),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
